@@ -1,0 +1,37 @@
+service: AWS
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+provider:
+  name: aws
+  runtime: go1.x
+  region: us-east-1
+
+functions:
+  # post client info to s3
+  Create:
+    handler: LambdaCreate/main/bin/Create
+    events:
+      - http:
+          path: models
+          method: post
+          cors: true
+    memorySize: 128
+    timeout: 30
+
+  # get client info from s3
+  Read:
+    handler: LambdaRead/main/bin/Read
+    events:
+      - http:
+          path: read/{file_path}
+          method: get
+          cors: true
+    memorySize: 128
+    timeout: 30
+
+package:
+  exclude:
+    - src/**
+  include:
+    - LambdaCreate/main/bin/Create
+    - LambdaRead/main/bin/Read
