@@ -10,7 +10,7 @@ import (
 	"io/ioutil"
 )
 
-const BUCKET = "beier-wayne-test"
+const BUCKET = "xxxx"
 const region = "us-east-1"
 
 // to connect the database and to use get method to get the device with id from database

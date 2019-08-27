@@ -46,6 +46,7 @@ des:
 	$(GOGET) -u github.com/aws/aws-lambda-go/lambda
 	$(GOGET) -u github.com/aws/aws-sdk-go
 	$(GOGET) -u github.com/satori/go.uuid
+	$(GOGET) -u github.com/gorilla/mux
 
 
 

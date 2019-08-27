@@ -17,7 +17,7 @@ type Client struct {
    Model      string `json:"Model"`
 }
 
-const BUCKET = "beier-wayne-test"
+const BUCKET = "xxxx"
 const region = "us-east-1"
 
 func CreateModel(ctx context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
